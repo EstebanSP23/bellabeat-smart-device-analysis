@@ -39,3 +39,7 @@ daily_activity %>%
   annotate("text", x = 10250, y = 3.5, label = "Recommended 10,000 Steps", color = "red", size = 3.5, hjust = 0) +
   labs(title = "Distribution of Average Daily Steps per User", x = "Average Steps", y = "Count of Users") +
   theme_minimal()
+```
+
+## Key Visualization
+![Average Daily Steps](avg_daily_steps)
