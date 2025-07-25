@@ -1,30 +1,42 @@
-# Bellabeat Case Study: Smart Device Usage Analysis
+# Bellabeat Case Study
 
-This project analyzes data from Fitbit smart devices to uncover wellness habits across users. The goal is to generate actionable recommendations for Bellabeat’s marketing strategy, specifically for their Leaf device.
+**Objective**: Analyze smart device usage (Fitbit data) to generate actionable marketing recommendations for Bellabeat’s Leaf product.
 
-## Files Included
+**Tools**:  
+- R (`dplyr`, `ggplot2`, `kableExtra`, `lubridate`, `readr`)  
+- Python (`pandas`, `sqlalchemy`, `psycopg2`)  
+- SQL (PostgreSQL via pgAdmin4)  
+- R Markdown, PowerPoint
 
-- `bellabeat.Rmd` – Full case study code and analysis
-- `bellabeat.pdf` – Knitted report in PDF format
-- `bellabeat_summary.pptx` – PowerPoint summary for stakeholder presentation
-- `clean_csvs/` – Cleaned CSV datasets used for analysis
+**Approach**:
+- Cleaned and transformed over 1 million data rows using PostgreSQL and Python scripts.
+- Explored daily activity, heart rate, and sleep behaviors using R.
+- Visualized key user patterns with `ggplot2` and summarized insights in a professional report and presentation.
 
-## Topics Explored
+**Key Insights**:
+- Most users average fewer than 10,000 steps daily.
+- Sleep duration is below the 8-hour recommendation and efficiency varies widely.
+- Heart rate peaks in the morning, suggesting ideal moments for wellness nudges.
+- Users can be segmented into three tiers (sedentary, moderate, active) for targeted marketing.
 
-- Physical activity patterns
-- Heart rate trends
-- Sleep behaviors and efficiency
-- User segmentation
+**Files**:
+- [`bellabeat.Rmd`](bellabeat.Rmd): Full case study code and analysis.
+- [`bellabeat.pdf`](bellabeat.pdf): Knitted report for stakeholders.
+- [`bellabeat_summary.pptx`](bellabeat_summary.pptx): Executive presentation.
+- [`clean_csvs/`](clean_csvs/): Cleaned datasets used in the analysis.
 
-## Key Insights
+**How to View**:  
+- Open `.Rmd` in RStudio to explore the code.  
+- Read the PDF or view the PowerPoint for summarized insights.
 
-- Most users don’t meet daily step goals
-- Sleep duration is below 8-hour recommendations
-- Clear activity tiers exist among users
-
-## 🛠Tools Used
-
-- R (ggplot2, dplyr, tidyr, kableExtra, lubridate)
-- PostgreSQL (data cleaning and validation)
-- PowerPoint (summary presentation)
-- Python (pandas, sqlalchemy, psycopg2)
+## Key Code Example
+```r
+daily_activity %>%
+  group_by(Id) %>%
+  summarise(avg_steps = mean(TotalSteps)) %>%
+  ggplot(aes(x = avg_steps)) +
+  geom_histogram(bins = 30, fill = "darkgreen", color = "black", alpha = 0.75) +
+  geom_vline(xintercept = 10000, color = "red", linetype = "dashed") +
+  annotate("text", x = 10250, y = 3.5, label = "Recommended 10,000 Steps", color = "red", size = 3.5, hjust = 0) +
+  labs(title = "Distribution of Average Daily Steps per User", x = "Average Steps", y = "Count of Users") +
+  theme_minimal()
