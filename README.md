@@ -42,4 +42,4 @@ daily_activity %>%
 ```
 
 ## Key Visualization
-![Average Daily Steps](avg_daily_steps)
+![Average Daily Steps](avg_daily_steps.jpeg)
