@@ -20,10 +20,9 @@
 - Users can be segmented into three tiers (sedentary, moderate, active) for targeted marketing.
 
 **Files**:
-- [`bellabeat.Rmd`](bellabeat.Rmd): Full case study code and analysis.
-- [`bellabeat.pdf`](bellabeat.pdf): Knitted report for stakeholders.
-- [`bellabeat_summary.pptx`](bellabeat_summary.pptx): Executive presentation.
-- [`clean_csvs/`](clean_csvs/): Cleaned datasets used in the analysis.
+- [`bellabeat.Rmd`](Bellabeat_Case_Study_ Insights.Rmd): Full case study code and analysis.
+- [`bellabeat.pdf`](Bellabeat_Case_Study_ Insights.pdf): Knitted report for stakeholders.
+- [`bellabeat_summary.pptx`](Bellabeat_Case_Study_ Insights.pptx): Executive presentation.
 
 **How to View**:  
 - Open `.Rmd` in RStudio to explore the code.  
